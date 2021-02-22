@@ -30,39 +30,49 @@ RSpec.describe Mechanic, type: :model do
 
     describe "instance methods" do
       it "can sort rides by being open and by most thrilling" do
+      park = AmusementPark.create!(
+        name: "Cedar Point",
+        admissions: 70
+      )
       mechanic_1 = Mechanic.create!(
         name: "Lily Hammersmith",
         years_experience: 8
       )
-      phantom = mechanic_1.rides.create!(
+      phantom = park.rides.create!(
         name: "The Phantom",
         thrill_rating: 11,
         open: true
       )
-      lightening = mechanic_1.rides.create!(
+      lightening = park.rides.create!(
         name: "Lightning Bolt",
         thrill_rating: 10,
         open: true
       )
-      pitfall = mechanic_1.rides.create!(
+      pitfall = park.rides.create!(
         name: "Pitfall",
         thrill_rating: 9,
         open: true
       )
-      ferris_wheel = mechanic_1.rides.create!(
+      ferris_wheel = park.rides.create!(
         name: "Ferris Wheel",
         thrill_rating: 2,
         open: false
       )
+      mechanic_1.rides << [phantom, lightening, pitfall]
+      
       expect(mechanic_1.open_rides.first).to eq(phantom)
       end
 
       it "can find a ride by id and add it" do
+        park = AmusementPark.create!(
+          name: "Cedar Point",
+          admissions: 70
+        )
         mechanic_1 = Mechanic.create!(
           name: "Lily Hammersmith",
           years_experience: 8
         )
-        ferris_wheel = Ride.create!(
+        ferris_wheel = park.rides.create!(
           name: "Ferris Wheel",
           thrill_rating: 2,
           open: false

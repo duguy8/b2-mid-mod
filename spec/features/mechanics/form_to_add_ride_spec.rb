@@ -39,7 +39,6 @@ RSpec.describe "When I visit a mechanics show page" do
       visit mechanic_path(@mechanic_1.id)
 
       expect(page).to have_button("Add Ride")
-      save_and_open_page
 
       fill_in (:search), with: "#{@steel.id}"
       click_button("Add Ride")

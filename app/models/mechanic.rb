@@ -11,4 +11,9 @@ class Mechanic < ApplicationRecord
   def open_rides
     rides.where(open: true).order('thrill_rating DESC')
   end
+
+  def add_ride(params)
+    new_ride = Ride.find(params)
+    rides.push(new_ride)
+  end
 end

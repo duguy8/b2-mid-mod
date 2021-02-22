@@ -56,6 +56,21 @@ RSpec.describe Mechanic, type: :model do
       )
       expect(mechanic_1.open_rides.first).to eq(phantom)
       end
+
+      it "can find a ride by id and add it" do
+        mechanic_1 = Mechanic.create!(
+          name: "Lily Hammersmith",
+          years_experience: 8
+        )
+        ferris_wheel = Ride.create!(
+          name: "Ferris Wheel",
+          thrill_rating: 2,
+          open: false
+        )
+        expect(mechanic_1.rides).to be_empty
+        mechanic_1.add_ride(ferris_wheel.id)
+        expect(mechanic_1.rides.first.name).to eq(ferris_wheel.name)
+      end
     end
   end
 end

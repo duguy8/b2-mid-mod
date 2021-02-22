@@ -6,7 +6,7 @@ class MechanicsController < ApplicationController
   def show
     @mechanic = Mechanic.find(params[:id])
     if params[:search]
-      @ride = Ride.find(params[:search])
+      @mechanic.add_ride(params[:search])
     end
   end
 end

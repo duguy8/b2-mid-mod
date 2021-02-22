@@ -1,0 +1,3 @@
+<h1><%= @mechanic.name %></h1>
+<h3><%= @mechanic.years_experience %><h3>
+<%= render partial: 'open_rides', locals: { rides: @mechanic.open_rides } %>

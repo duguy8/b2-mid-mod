@@ -31,7 +31,9 @@ RSpec.describe AmusementPark, type: :model do
         thrill_rating: 9,
         open: true
       )
+      
       expected = park_1.rides_order
+
       expect(expected.first.name).to eq("A Pitfall")
       expect(expected.last.name).to eq("The Phantom")
     end

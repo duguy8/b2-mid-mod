@@ -4,7 +4,7 @@ RSpec.describe "When I visit an amusement parks show page" do
   before :each do
     @park_1 = AmusementPark.create!(
       name: "KennyWood",
-      admissions: 30
+      admissions: 29.99
     )
     @phantom = @park_1.rides.create!(
       name: "The Phantom",
@@ -27,7 +27,7 @@ RSpec.describe "When I visit an amusement parks show page" do
     it "Also shows average thrill rating of rides" do
 
       visit amusement_park_path(@park_1.id)
-      save_and_open_page
+      
       expect(page).to have_content(@park_1.name)
       expect(page).to have_content(@park_1.admissions)
       expect(page).to have_content(@phantom.name)

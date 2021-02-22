@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   #amusement_parks
   resources :amusement_parks, only: [:show]
+
+  #mechanic_rides
+  resources :mechanic_rides, only: [:show]
 end

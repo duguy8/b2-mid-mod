@@ -21,13 +21,12 @@ RSpec.describe "When I visit an amusement parks show page" do
       thrill_rating: 9,
       open: true
     )
-    require "pry"; binding.pry
   end
 
   describe "I see name and admissions, name of all rides in alph order" do
     it "Also shows average thrill rating of rides" do
 
-      visit amusement_parks_path
+      visit amusement_park_path(@park_1.id)
 
       expect(page).to have_content(@park_1.name)
       expect(page).to have_content(@park_1.admissions)
@@ -39,7 +38,7 @@ RSpec.describe "When I visit an amusement parks show page" do
       expect(@pitfall.name).to appear_before(@phantom.name)
       expect(@lightening.name).to appear_before(@pitfall.name)
 
-      expect(page).to have_content("Average Thrill Rating of Rides: #{@park_1.average_thrill}/10")
+      expect(page).to have_content("Average Thrill Rating of Rides: #{@park_1.average_thrill.round(1)}/10")
     end
   end
 end

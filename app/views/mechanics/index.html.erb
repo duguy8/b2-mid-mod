@@ -1,0 +1,3 @@
+<h1>All Mechanics</h1>
+<%= render partial: 'all_mechanics', locals: { mechanics: @mechanics } %>
+<h4>Average years of experience: <%= @mechanics.average_experience.round(2) %></h4>

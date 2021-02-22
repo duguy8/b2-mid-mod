@@ -28,7 +28,7 @@ RSpec.describe "When I visit 'mechanics_path'" do
       expect(page).to have_content(@mechanic_2.years_experience)
       expect(page).to have_content(@mechanic_3.name)
       expect(page).to have_content(@mechanic_3.years_experience)
-      expect(page).to have_content("Average years of experience: 37.66")
+      expect(page).to have_content("Average years of experience: 37.67")
     end
   end
 end

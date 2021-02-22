@@ -31,7 +31,6 @@ RSpec.describe "When I visit a mechanics show page" do
       thrill_rating: 10,
       open: true
     )
-    require "pry"; binding.pry
   end
 
   describe "I see a form to add a ride to that mechanic" do
@@ -40,8 +39,9 @@ RSpec.describe "When I visit a mechanics show page" do
       visit mechanic_path(@mechanic_1.id)
 
       expect(page).to have_button("Add Ride")
+      save_and_open_page
 
-      fill_in 'Search', with: "#{@steel.id}"
+      fill_in (:search), with: "#{@steel.id}"
       click_button("Add Ride")
 
       expect(current_path).to eq(mechanic_path(@mechanic_1.id))

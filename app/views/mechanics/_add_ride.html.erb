@@ -1,0 +1,10 @@
+<%= form_with url:(mechanic_path(mechanic.id)), method: :get, local: true do |f| %>
+  <%= f.label "Search" %>
+  <%= f.number_field :search, placeholder: "Enter Rides ID" %>
+
+  <%= f.submit "Add Ride" %>
+<% end %>
+
+<% if ride %>
+  <h4><%= ride.name %></h4>
+<% end %>

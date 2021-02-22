@@ -5,5 +5,8 @@ class MechanicsController < ApplicationController
 
   def show
     @mechanic = Mechanic.find(params[:id])
+    if params[:search]
+      @ride = Ride.find(params[:search])
+    end
   end
 end

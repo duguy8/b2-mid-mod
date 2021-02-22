@@ -1,4 +1,4 @@
-<h1><%= @mechanic.name %></h1>
-<h3><%= @mechanic.years_experience %><h3>
+<h1>Mechanic: <%= @mechanic.name %></h1>
+<h3>Years of Experience: <%= @mechanic.years_experience %><h3>
 <%= render partial: 'open_rides', locals: { rides: @mechanic.open_rides } %>
 <%= render partial: 'add_ride', locals: { mechanic: @mechanic, ride: @ride } %>

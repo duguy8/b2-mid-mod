@@ -20,7 +20,7 @@ RSpec.describe "When I visit 'mechanics_path'" do
     it "Lists mechanics names/experience and average years of exp" do
 
       visit mechanics_path
-
+      
       expect(page).to have_content("All Mechanics")
       expect(page).to have_content(@mechanic_1.name)
       expect(page).to have_content(@mechanic_1.years_experience)

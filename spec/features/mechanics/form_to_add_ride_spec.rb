@@ -47,10 +47,10 @@ RSpec.describe "When I visit a mechanics show page" do
 
       visit mechanic_path(@mechanic_1.id)
 
-      expect(page).to have_button("Add Ride")
+      expect(page).to have_button("Submit")
 
       fill_in (:search), with: "#{@steel.id}"
-      click_button("Add Ride")
+      click_button("Submit")
 
       expect(current_path).to eq(mechanic_path(@mechanic_1.id))
       expect(page).to have_content(@steel.name)

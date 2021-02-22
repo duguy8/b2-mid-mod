@@ -1,4 +1,4 @@
 <h1><%= @park.name %></h1>
-<h3>Admission Price: <%= @park.admissions %></h3>
+<h3>Admissions: $<%= @park.admissions %></h3>
 <%= render partial: 'rides', locals: { rides: @park.rides_order } %>
 <h4>Average Thrill Rating of Rides: <%= @park.average_thrill.round(1) %>/10</h4>
